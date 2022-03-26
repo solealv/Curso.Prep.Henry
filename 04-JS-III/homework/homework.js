@@ -109,10 +109,10 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
-  var max = numero[0];
+  var max = numeros[0];
   for (i = 0; i < numeros.length; i++) {
     if (numeros[i] > max) {
-      max = numero[i];
+      max = numeros[i];
     }
   }
   return max;
@@ -151,15 +151,13 @@ function diaDeLaSemana(numeroDeDia) {
   //Suponga que los días de la semana se codifican como 1 = Domingo, 2 = Lunes y así sucesivamente. 
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
-  //Escribe tu código aquí   
-  for (i = 0; i < numeroDeDia.length; i++) {
-    if (numeroDeDia[i] === 0 || numeroDeDia === 6) {
-      return 'Es fin de semana';
+  //Escribe tu código aquí  
+  if (numeroDeDia === 1 || numeroDeDia === 7) {
+    return 'Es fin de semana';
     }
-    else if (numeroDeDia[i] === 1 || numeroDeDia[i] === 2 || numeroDeDia[i] === 3 || numeroDeDia[i] === 4 || numeroDeDia[i] === 5) {
-      return 'Es dia Laboral';
+  else if (numeroDeDia === 2 || numeroDeDia === 3 || numeroDeDia === 4 || numeroDeDia === 5 || numeroDeDia === 6) {
+    return 'Es dia Laboral';
     }
-  }
 }
 
 
@@ -199,7 +197,7 @@ function mesesDelAño(array) {
       otroArray.push(array[i]);
     }
   }
-  if (otroArray.length === 0) {
+  if (otroArray.length !== 3) {
     return 'No se encontraron los meses pedidos';
   }
   return otroArray;
