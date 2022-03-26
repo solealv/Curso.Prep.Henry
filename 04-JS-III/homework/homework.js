@@ -3,14 +3,14 @@
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un  array (pasado por parametro)
   // Tu código:
-  return array[1];
+  return array[0];
 }
 
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
-  return array[array.length];
+  return array[array.length - 1];
 }
 
 
@@ -112,7 +112,7 @@ function numeroMasGrande(numeros) {
   var max = numero[0];
   for (i = 0; i < numeros.length; i++) {
     if (numeros[i] > max) {
-      max = numeros[i];
+      max = numero[i];
     }
   }
   return max;
@@ -153,10 +153,10 @@ function diaDeLaSemana(numeroDeDia) {
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
   for (i = 0; i < numeroDeDia.length; i++) {
-    if (numeroDeDia[i] === 1 || numeroDeDia === 7) {
+    if (numeroDeDia[i] === 0 || numeroDeDia === 6) {
       return 'Es fin de semana';
     }
-    else if (numeroDeDia[i] === 2 || numeroDeDia[i] === 3 || numeroDeDia[i] === 4 || numeroDeDia[i] === 5 || numeroDeDia[i] === 6) {
+    else if (numeroDeDia[i] === 1 || numeroDeDia[i] === 2 || numeroDeDia[i] === 3 || numeroDeDia[i] === 4 || numeroDeDia[i] === 5) {
       return 'Es dia Laboral';
     }
   }
@@ -198,6 +198,9 @@ function mesesDelAño(array) {
     if (array[i] === 'Enero' || array[i] === 'Marzo' || array[i] === 'Noviembre') {
       otroArray.push(array[i]);
     }
+  }
+  if (otroArray.length === 0) {
+    return 'No se encontraron los meses pedidos';
   }
   return otroArray;
 }
@@ -246,8 +249,6 @@ function breakStatement(numero) {
   }
 }
 
-
-
 function continueStatement(numero) {
   //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
   //Guardar cada nuevo valor en un array.    
@@ -257,13 +258,12 @@ function continueStatement(numero) {
   // Tu código:
   var bucle = [];
   for (i = 0; i < 10; i++) {
-    numero = numero + 2;
     if (i === 5) continue;
+    numero = numero + 2;
     bucle.push(numero);
   }
   return bucle;
 }
-
 
 // No modificar nada debajo de esta línea
 // --------------------------------
