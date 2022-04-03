@@ -57,7 +57,7 @@ function filter(array) {
   var arrayNuevo = [];
   for (i = 0; i < array.length; i++) {
     if (array[i][0] === 'a') {
-      array.push(array[i]);
+      arrayNuevo.push(array[i]);
     }
   }
   return arrayNuevo;
